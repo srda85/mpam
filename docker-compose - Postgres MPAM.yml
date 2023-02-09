@@ -1,0 +1,28 @@
+#Fichier qui va ns permettre d'interargir avec la bdd postGres de docker
+
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTRGES_USER: postgres
+      POSTGRES_PASSWORD: password
+      #ou seront stockée les données
+      PGDATA: /data/postrgres
+    volumes:
+      - db:/data/postgres
+    #les ports sont différents car Amigos voulait éviter tout conflit avec une potentielle DB qui serait installée localement.
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
+
+
