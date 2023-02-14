@@ -2,21 +2,21 @@ package com.srda.mpam.service;
 
 import java.util.List;
 
-public interface CrudService <T, TID, TCREATE>{
+public interface CrudService <T, TID, TCREATE, TUPDATE>{
 
-//    TUPDATE a mettre dans les génériques
+
 
 // CREATE
     T create(TCREATE toInsert);
 //
 //    // UPDATE
-//    T update(TID id, TUPDATE toUpdate);
+    T update(TID id, TUPDATE toUpdate);
 
     // READ
     T getOne(TID id);
     List<T> getAll();
 
 //    // DELETE
-     void delete(TID id);
+    void delete(TID id);
 }
 

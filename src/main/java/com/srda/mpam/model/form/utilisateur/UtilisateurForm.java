@@ -1,4 +1,4 @@
-package com.srda.mpam.model.form;
+package com.srda.mpam.model.form.utilisateur;
 
 import lombok.Builder;
 import lombok.Data;

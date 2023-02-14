@@ -1,11 +1,10 @@
 package com.srda.mpam.controller;
 
 import com.srda.mpam.model.dto.UtilisateurDTO;
-import com.srda.mpam.model.entity.Utilisateur;
-import com.srda.mpam.model.form.UtilisateurForm;
+import com.srda.mpam.model.form.utilisateur.UtilisateurForm;
+import com.srda.mpam.model.form.utilisateur.UtilisateurUpdateForm;
 import com.srda.mpam.service.utilisateur.UtilisateurServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +35,11 @@ public class UtilisateurController {
 
     @DeleteMapping(value = "{id}")
     public void deleteById(@PathVariable Long id){
-        utilisateurServiceImp.delete(id);
+       utilisateurServiceImp.delete(id);
     }
 
+    @PutMapping(value = "{id}")
+    public UtilisateurDTO update(@PathVariable Long id, @RequestBody UtilisateurUpdateForm utilisateurUpdateForm){
+        return utilisateurServiceImp.update(id,utilisateurUpdateForm);
+    }
 }
