@@ -13,9 +13,6 @@ import org.springframework.stereotype.Component;
 public class AccountUserMapper {
 
     @Autowired
-    AccountUserRepository accountUserRepository;
-
-    @Autowired
     UtilisateurRepository utilisateurRepository;
 
     public AccountUserDTO toDTO(AccountUser accountUser) {
