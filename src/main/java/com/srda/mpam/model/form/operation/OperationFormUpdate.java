@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Data
 public class OperationFormUpdate {
     private Long id;
-    private Long montant;
+    private Double montant;
     private LocalDate dateValeur;
     private Long refBanquaire;
     private Long accountUserId;

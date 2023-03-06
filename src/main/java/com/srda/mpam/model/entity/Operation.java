@@ -12,7 +12,7 @@ public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long montant;
+    private Double montant;
     private LocalDate dateValeur;
     private Long refBanquaire;
 
@@ -22,7 +22,7 @@ public class Operation {
     @ManyToOne
     private CompteEtranger compteEtranger;
 
-    public Operation(Long montant, LocalDate dateValeur, Long refBanquaire, AccountUser accountUser, CompteEtranger compteEtranger) {
+    public Operation(Double montant, LocalDate dateValeur, Long refBanquaire, AccountUser accountUser, CompteEtranger compteEtranger) {
         this.montant = montant;
         this.dateValeur = dateValeur;
         this.refBanquaire = refBanquaire;
